@@ -72,7 +72,8 @@ func (r *Result) durations() map[string]time.Duration {
 // It is from first response byte to the given time. The time must
 // be time after read body (go-httpstat can not detect that time).
 func (r *Result) ContentTransfer(t time.Time) time.Duration {
-	return t.Sub(r.t4)
+	//return t.Sub(r.t4)
+	return t.Sub(r.transferStart)
 }
 
 // Total returns the duration of total http request.
